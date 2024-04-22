@@ -1,6 +1,6 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../redux/Reducers';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleTodo, deleteTodo } from "../redux/Reducers";
 
 const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
@@ -16,7 +16,11 @@ const TodoItem = ({ todo }) => {
   return (
     <div>
       <input type="checkbox" checked={todo.completed} onChange={handleToggle} />
-      <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</span>
+      <span
+        style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+      >
+        {todo.text}
+      </span>
       <button onClick={handleDelete}>Delete</button>
     </div>
   );

@@ -1,11 +1,9 @@
-// src/components/TodoList.js
-
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTodo, deleteTodo } from "../redux/TodoSlice.js";
 
 const TodoList = () => {
-  const todos = useSelector((state) => state.todos.todos); // Ensure correct path to todos array
+  const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
 
   const handleToggleTodo = (id) => {
@@ -18,10 +16,10 @@ const TodoList = () => {
 
   return (
     <ul>
-    <h1>Todo List</h1>
+      <h1>Todo List</h1>
       {todos &&
         todos.map((todo) => (
-          <li key={todo.id}>          
+          <li key={todo.id}>
             <input
               type="checkbox"
               checked={todo.completed}

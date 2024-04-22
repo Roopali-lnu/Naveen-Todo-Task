@@ -1,22 +1,22 @@
 // src/components/AddTodoForm.js
 
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../redux/TodoSlice';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../redux/TodoSlice";
 
 const AddTodoForm = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.trim() !== '') {
+    if (inputValue.trim() !== "") {
       dispatch(addTodo(inputValue.trim()));
-      setInputValue('');
+      setInputValue("");
     }
   };
 
